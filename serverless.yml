@@ -1,5 +1,6 @@
 service: notes-app-2-api
 
+useDotenv: true
 # Create an optimized package for our functions
 package:
   individually: true
@@ -16,9 +17,8 @@ custom:
   tableName: ${self:custom.stage}-notes
 provider:
   name: aws
-  runtime: nodejs10.x
-  stage: dev
-  region: us-east-1
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
 
   # These environment variables are made available to our functions
   # under process.env.
