@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 import stripePackage from "stripe";
 import calculateCost from "./libs/billing-lib";
 import {success, failure} from "./libs/response-lib";
 
-export default async function main(event) {
+export async function main(event) {
     const {storage, source} = JSON.parse(event.body);
     const amount = calculateCost(storage);
     const description = "Scratch charge";

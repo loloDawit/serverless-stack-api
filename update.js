@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 import * as dynamoDbLib from "./libs/dynamodb-lib";
 import {success, failure} from "./libs/response-lib";
 
-export default async function main(event) {
+export async function main(event) {
     const data = JSON.parse(event.body);
     const params = {
         TableName: process.env.tableName,
